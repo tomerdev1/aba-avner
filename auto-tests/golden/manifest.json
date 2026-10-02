@@ -1,0 +1,36 @@
+{
+  "similarity_threshold": 10,
+  "expected_hashed_images": 8,
+  "expected_unique_after_existing_filter": 4,
+  "expected_duplicate_images": 4,
+  "expected_groups": [
+    [
+      "group_a_exact.jpg",
+      "group_a_near.jpg",
+      "group_a_original.jpg"
+    ],
+    [
+      "group_b_near.jpg",
+      "group_b_original.jpg"
+    ],
+    [
+      "distinct_c.jpg"
+    ],
+    [
+      "distinct_d.jpg"
+    ],
+    [
+      "existing_input.jpg"
+    ]
+  ],
+  "expected_output_prefixes": [
+    "group_a_",
+    "group_b_",
+    "distinct_c",
+    "distinct_d"
+  ],
+  "expected_warning_files": [
+    "corrupt_input.jpg",
+    "existing_input.jpg"
+  ]
+}

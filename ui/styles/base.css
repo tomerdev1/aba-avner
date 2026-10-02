@@ -1,0 +1,54 @@
+.aba-app,
+.aba-app * {
+  box-sizing: border-box;
+}
+
+.aba-app {
+  margin: 0;
+  min-height: var(--size-viewport-height);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-base);
+  background:
+    radial-gradient(circle at top, var(--color-background-glow) 0%, var(--color-background-glow-fade) 38%),
+    linear-gradient(var(--angle-surface), var(--color-bg-canvas) 0%, var(--color-bg-canvas-alt) 100%);
+}
+
+.aba-app :where(h1, h2, p) {
+  margin: 0;
+}
+
+.aba-app :where(button, input) {
+  font: inherit;
+}
+
+.aba-app :where(button, input, [role="menuitemradio"]):focus-visible {
+  outline: var(--size-outline-width) solid var(--color-focus-ring);
+  outline-offset: var(--size-outline-offset);
+}
+
+.aba-app :where(
+  .app-subtitle,
+  .app-settings__description,
+  .app-summary__hint,
+  .app-summary__output,
+  .app-issues__hint,
+  .app-issues__item,
+  .app-slider__label
+) {
+  overflow-wrap: anywhere;
+}
+
+.aba-app :where(.app-summary__output, .app-issues__item) {
+  unicode-bidi: plaintext;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aba-app *,
+  .aba-app *::before,
+  .aba-app *::after {
+    animation-duration: var(--size-reduced-motion) !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: var(--size-reduced-motion) !important;
+    scroll-behavior: auto !important;
+  }
+}

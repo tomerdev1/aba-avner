@@ -1,0 +1,11 @@
+@import "./styles/tokens.css";
+@import "./styles/base.css";
+@import "./src/components/app-shell/app-shell.css";
+@import "./src/components/header/header.css";
+@import "./src/components/header/language-menu.css";
+@import "./src/components/header/buttons.css";
+@import "./src/components/progress-section/progress-section.css";
+@import "./src/components/review-panel/review-panel.css";
+@import "./src/components/summary-panel/summary-panel.css";
+@import "./src/components/issues-panel/issues-panel.css";
+@import "./src/features/settings/settings.css";

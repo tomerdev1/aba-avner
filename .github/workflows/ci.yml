@@ -1,0 +1,178 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  quality-gates:
+    name: Quality Gates
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Set up Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: ui/package-lock.json
+
+      - name: Install Linux dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libgtk-3-dev \
+            libwebkit2gtk-4.1-dev \
+            libayatana-appindicator3-dev \
+            librsvg2-dev \
+            libfuse2 \
+            rpm
+
+      - name: Install UI dependencies for packaging
+        working-directory: ui
+        run: npm ci
+
+      - name: Review Tauri capabilities
+        run: python3 src-tauri/scripts/check_tauri_capabilities.py
+
+      - name: Install cargo-audit
+        working-directory: src-tauri
+        run: cargo install cargo-audit --locked
+
+      - name: Audit Rust dependencies
+        working-directory: src-tauri
+        run: cargo audit
+
+      - name: Audit production npm dependencies
+        working-directory: ui
+        run: npm audit --omit=dev
+
+      - name: Run backend tests without GUI features
+        working-directory: src-tauri
+        run: cargo test --no-default-features
+
+      - name: Run backend tests with GUI features
+        working-directory: src-tauri
+        run: cargo test
+
+      - name: Run UI tests
+        working-directory: ui
+        run: npm test
+
+      - name: Install Playwright browser
+        working-directory: ui
+        run: npx playwright install --with-deps chromium
+
+      - name: Run visual regression tests
+        working-directory: ui
+        run: npm run test:visual
+
+  tauri-build:
+    name: Build (${{ matrix.os }})
+    needs: quality-gates
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-latest]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Set up Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: ui/package-lock.json
+
+      - name: Install Linux dependencies
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libgtk-3-dev \
+            libwebkit2gtk-4.1-dev \
+            libayatana-appindicator3-dev \
+            librsvg2-dev \
+            libfuse2 \
+            rpm
+
+      - name: Install UI dependencies
+        working-directory: ui
+        run: npm ci
+
+      - name: Install Tauri CLI
+        run: cargo install tauri-cli --locked
+
+      - name: Install msixbundle-cli
+        if: matrix.os == 'windows-latest'
+        run: cargo install msixbundle-cli --locked
+
+      - name: Build MSIX package (Windows, free Store code signing - see docs/microsoft-store-submission.md)
+        if: matrix.os == 'windows-latest'
+        run: npx @choochmeque/tauri-windows-bundle@latest build --arch x64 --runner cargo
+
+      - name: Build Tauri app (macOS, prepares ui/dist in build.rs)
+        if: matrix.os == 'macos-latest'
+        working-directory: src-tauri
+        run: cargo tauri build --bundles app,dmg
+
+      - name: Verify macOS bundle outputs
+        if: matrix.os == 'macos-latest'
+        run: python3 src-tauri/scripts/verify_bundle_outputs.py macos
+
+      - name: Build Tauri app (Linux, prepares ui/dist in build.rs)
+        if: matrix.os == 'ubuntu-latest'
+        working-directory: src-tauri
+        run: cargo tauri build --bundles appimage,deb,rpm
+
+      - name: Verify Linux bundle outputs
+        if: matrix.os == 'ubuntu-latest'
+        run: python3 src-tauri/scripts/verify_bundle_outputs.py linux
+
+      - name: Upload Windows MSIX (artifact)
+        if: matrix.os == 'windows-latest'
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-msix
+          path: |
+            src-tauri/target/msix/*.msix
+            src-tauri/target/msix/*.msixbundle
+
+      - name: Upload macOS artifacts
+        if: matrix.os == 'macos-latest'
+        uses: actions/upload-artifact@v4
+        with:
+          name: macos-artifacts
+          path: |
+            src-tauri/target/release/bundle/dmg/*.dmg
+            src-tauri/target/release/bundle/macos/*.app
+
+      - name: Upload Linux artifacts
+        if: matrix.os == 'ubuntu-latest'
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-artifacts
+          path: |
+            src-tauri/target/release/bundle/appimage/*.AppImage
+            src-tauri/target/release/bundle/deb/*.deb
+            src-tauri/target/release/bundle/rpm/*.rpm

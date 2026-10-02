@@ -1,0 +1,24 @@
+{
+  "name": "aba-avner-ui",
+  "private": true,
+  "license": "GPL-3.0-or-later",
+  "type": "module",
+  "scripts": {
+    "bootstrap:dev": "./scripts/bootstrap-dev.sh",
+    "build": "node ./scripts/build-ui.mjs",
+    "ui:state": "./scripts/run-visual-state.sh",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
+    "test:visual": "VISUAL_MODE=headless ./scripts/run-playwright.sh test",
+    "test:visual:headed": "VISUAL_MODE=headed ./scripts/run-playwright.sh test",
+    "test:visual:update": "VISUAL_MODE=headless ./scripts/run-playwright.sh test --update-snapshots",
+    "test:visual:update:headed": "VISUAL_MODE=headed ./scripts/run-playwright.sh test --update-snapshots",
+    "test:visual:install": "playwright install chromium"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.53.0",
+    "@vitest/coverage-v8": "^2.1.9",
+    "jsdom": "^24.1.0",
+    "vitest": "^2.1.8"
+  }
+}

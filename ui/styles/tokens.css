@@ -1,0 +1,133 @@
+:root[data-theme="default"] {
+  --space-1: 0.25rem;
+  --space-1-5: 0.375rem;
+  --space-2: 0.5rem;
+  --space-2-5: 0.625rem;
+  --space-3: 0.75rem;
+  --space-3-5: 0.875rem;
+  --space-4: 1rem;
+  --space-4-5: 1.125rem;
+  --space-5: 1.25rem;
+  --space-5-5: 1.375rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.125rem;
+  --radius-2xl: 1.375rem;
+  --radius-full: 999px;
+
+  --font-size-2xs: 0.6875rem;
+  --font-size-xs: 0.75rem;
+  --font-size-caption: 0.8125rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 1.875rem;
+  --font-size-3xl: 2.125rem;
+  --font-size-icon-sm: 1.25rem;
+  --font-size-icon-md: 1.3125rem;
+
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --shadow-panel: 0 1.875rem 5rem rgba(15, 20, 27, 0.45);
+  --shadow-soft: 0 0.75rem 2.125rem rgba(9, 13, 19, 0.32);
+  --shadow-interactive: 0 0.625rem 1.75rem rgba(45, 212, 191, 0.18);
+  --shadow-primary: 0 0.75rem 1.5rem rgba(45, 212, 191, 0.25);
+  --shadow-overlay: 0 1.375rem 3.125rem rgba(6, 10, 16, 0.44);
+
+  --duration-fast: 120ms;
+  --duration-normal: 200ms;
+  --duration-progress: 250ms;
+  --duration-slow: 320ms;
+  --duration-panel-flip: 420ms;
+  --easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --easing-emphasized: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --color-bg-canvas: #0f141b;
+  --color-bg-canvas-alt: #0b1118;
+  --color-bg-card: #111a24;
+  --color-bg-card-strong: rgba(35, 53, 74, 0.9);
+  --color-bg-overlay: rgba(11, 17, 25, 0.98);
+  --color-bg-field: rgba(17, 26, 36, 0.72);
+  --color-bg-subtle: rgba(255, 255, 255, 0.03);
+  --color-bg-muted: rgba(255, 255, 255, 0.04);
+  --color-bg-track: rgba(255, 255, 255, 0.08);
+  --color-bg-stat: rgba(6, 10, 16, 0.24);
+  --color-bg-issue: rgba(6, 10, 16, 0.32);
+
+  --color-text-primary: #e6f0ff;
+  --color-text-secondary: #9bb0c7;
+  --color-text-inverse: #0b1018;
+
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+  --color-border-muted: rgba(255, 255, 255, 0.06);
+  --color-border-strong: rgba(126, 240, 184, 0.4);
+
+  --color-action-primary-bg: #7ef0b8;
+  --color-action-primary-accent: #2dd4bf;
+  --color-action-primary-text: #0b1018;
+  --color-action-secondary-bg: rgba(17, 26, 36, 0.72);
+  --color-action-secondary-hover: rgba(126, 240, 184, 0.12);
+
+  --color-status-success-bg: rgba(126, 240, 184, 0.08);
+  --color-status-success-bg-strong: rgba(126, 240, 184, 0.16);
+  --color-status-success-border: rgba(126, 240, 184, 0.2);
+  --color-status-success-text: #7ef0b8;
+
+  --color-status-warning-bg: rgba(255, 184, 77, 0.08);
+  --color-status-warning-bg-strong: rgba(255, 184, 77, 0.16);
+  --color-status-warning-border: rgba(255, 184, 77, 0.2);
+  --color-status-warning-text: #ffd38a;
+
+  --color-focus-ring: rgba(126, 240, 184, 0.45);
+  --color-progress-end: #8ab4ff;
+  --color-background-glow: rgba(50, 82, 116, 0.75);
+  --color-background-glow-fade: rgba(15, 20, 27, 0);
+  --color-card-gradient-end: rgba(16, 24, 36, 0.95);
+  --color-settings-gradient-start: rgba(9, 13, 20, 0.2);
+  --color-settings-gradient-end: rgba(9, 13, 20, 0.45);
+
+  --font-family-base: "Space Grotesk", "Segoe UI", sans-serif;
+
+  --breakpoint-sm: 40rem;
+
+  --border-width-thin: 1px;
+
+  --angle-surface: 180deg;
+  --angle-card: 140deg;
+  --angle-primary-action: 120deg;
+  --angle-progress: 90deg;
+
+  --size-outline-width: 0.125rem;
+  --size-outline-offset: 0.125rem;
+  --size-reduced-motion: 0.01ms;
+  --size-viewport-height: 100vh;
+  --size-viewport-width: 100vw;
+  --size-panel-width-fluid: 92vw;
+  --size-panel-width: 40rem;
+  --size-card-stage-min-height: 26.25rem;
+  --size-card-stage-min-height-compact: 29.375rem;
+  --size-card-stage-perspective: 75rem;
+  --size-panel-shift: 3.5rem;
+  --size-panel-tilt: 12deg;
+  --size-panel-scale: 0.96;
+  --size-panel-blur: 0.5rem;
+  --size-button-icon: 3rem;
+  --size-button-primary-height: 2.625rem;
+  --size-progress-height: 0.375rem;
+  --size-locale-trigger-width: 3rem;
+  --size-locale-trigger-height: 2.375rem;
+  --size-locale-menu-width: 10.25rem;
+  --size-issues-list-height: 13.125rem;
+  --size-hover-lift: -0.0625rem;
+
+  --letter-spacing-eyebrow: 0.35em;
+  --letter-spacing-badge: 0.04em;
+}

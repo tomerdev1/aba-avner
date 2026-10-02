@@ -1,0 +1,112 @@
+.app-review {
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-4-5);
+  border: var(--border-width-thin) solid var(--color-border-muted);
+  border-radius: var(--radius-xl);
+  background: color-mix(in srgb, var(--color-bg-card-strong) 82%, black);
+}
+
+.app-review[hidden] {
+  display: none;
+}
+
+.app-review__header {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.app-review__badge {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  padding: var(--space-1-5) var(--space-2-5);
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--color-border-muted) 28%, transparent);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-badge);
+  text-transform: uppercase;
+}
+
+.app-review__title,
+.app-review__group-title {
+  margin: 0;
+  color: var(--color-text-primary);
+}
+
+.app-review__title {
+  font-size: var(--font-size-base);
+}
+
+.app-review__hint,
+.app-review__empty,
+.app-review__filename {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-caption);
+}
+
+.app-review__empty[hidden] {
+  display: none;
+}
+
+.app-review__groups {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.app-review__group {
+  display: grid;
+  gap: var(--space-2-5);
+}
+
+.app-review__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+  gap: var(--space-3);
+}
+
+.app-review__image {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  border: var(--border-width-thin) solid var(--color-border-muted);
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--color-surface-raised, #fff) 5%, transparent);
+  text-align: start;
+  cursor: pointer;
+}
+
+.app-review__image.is-selected {
+  border-width: var(--border-width-medium);
+  border-color: var(--color-status-success-border);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-status-success-bg-strong) 35%, transparent);
+}
+
+.app-review__thumb {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--color-bg-stat) 88%, black);
+}
+
+.app-review__actions {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+@media (max-width: var(--breakpoint-sm)) {
+  .app-review__actions {
+    flex-direction: column;
+  }
+
+  .app-review__actions .app-button-primary,
+  .app-review__actions .app-button-ghost {
+    width: 100%;
+  }
+}

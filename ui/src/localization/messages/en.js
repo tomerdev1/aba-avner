@@ -1,0 +1,118 @@
+export const enMessages = {
+  app: {
+    title: "Aba Avner",
+    eyebrow: "Visual duplicate remover",
+    subtitle: "One click. One clean folder.",
+    openSettings: "Open settings",
+    openLanguageMenu: "Open language menu",
+    startRun: "Choose folders & Run",
+    cancelRun: "Cancel run",
+    idle: "Idle",
+    working: "Working",
+    starting: "Starting",
+    cancelling: "Cancelling",
+  },
+  locales: {
+    en: "English",
+    he: "Hebrew",
+  },
+  settings: {
+    eyebrow: "Preferences",
+    title: "Settings",
+    back: "Back",
+    reset: "Reset to defaults",
+    minSizeLabel: "Minimum image size",
+    minSizeDescription:
+      "Skip tiny images before dedupe runs so scans stay focused on the files that matter.",
+    ignoreSmallerThan: "Ignore images smaller than",
+    similarityThresholdLabel: "Similarity threshold",
+    similarityThresholdDescription:
+      "Control how tolerant matching should be when two images are visually close but not identical.",
+    matchImagesWithin: "Match images within",
+    similarityThresholdMin: "Stricter match",
+    similarityThresholdMax: "Looser match",
+    filterExistingOutputLabel: "Skip images already in output",
+    filterExistingOutputDescription:
+      "Compare incoming unique images against the destination folder and skip ones that already have a similar match there.",
+    visualReviewLabel: "Visual duplicate review step",
+    visualReviewDescription:
+      "Pause after grouping so you can choose one image to keep from each duplicate group before export.",
+    exportGroupsLabel: 'Export "similar image groups" folder',
+    exportGroupsDescription:
+      "Create the duplicate-group reference folder alongside the deduped export output.",
+  },
+  dialogs: {
+    selectInput: "Select the image source folder",
+    selectOutput: "Select the output folder",
+  },
+  progress: {
+    label: "Dedupe progress",
+    scan: "Scanning",
+    hash: "Hashing",
+    group: "Grouping",
+    review: "Reviewing",
+    copy: "Copying",
+  },
+  review: {
+    badge: "Review",
+    title: "Review duplicate groups",
+    hint: "Choose one image to keep from each duplicate group before export.",
+    empty: "No duplicate groups need manual review. Apply & Export to continue.",
+    groupLabel: "Group {index}",
+    apply: "Apply & Export",
+    cancel: "Cancel",
+  },
+  summary: {
+    badge: "Run summary",
+    hint: "Latest completed run",
+    totalLabel: "Images scanned",
+    uniqueLabel: "Unique copied",
+    duplicateLabel: "Duplicates removed",
+    storageSavedLabel: "Storage saved",
+    showDetails: "Show details",
+    hideDetails: "Hide details",
+    reportMismatch:
+      "Grouping found {groupedUniqueImages} representatives before output-folder filtering. {copiedUniqueImages} were actually copied.",
+    folderBreakdownTitle: "Top folders by duplicate waste",
+    folderBreakdownHint: "Highest duplicate counts and wasted storage by source folder.",
+    folderBreakdownEmpty: "No folder hotspots for this run.",
+    folderDuplicates: "{count} duplicates",
+    outputDir: "Output folder: {path}",
+  },
+  issues: {
+    tauriUnavailableTitle: "Tauri unavailable",
+    tauriUnavailableHint: "The desktop APIs are required to run this action.",
+    tauriUnavailableItem: "Tauri APIs not available.",
+    runFailedTitle: "Run failed",
+    runFailedHint: "The process stopped before completion.",
+    runCancelledTitle: "Run cancelled",
+    runCancelledHint: "The process was stopped before completion.",
+    warningsTitle: "{count} warnings",
+    warningsHint: "Review skipped files and non-fatal problems.",
+    warningItems: {
+      fileIssue: "{path}: {detail}",
+      outputDirScanFailed: "{path}: {detail}",
+      similarImageInOutput:
+        "Skipped {path} because a similar image already exists in the output folder.",
+    },
+    errors: {
+      invalidInputDir: "The selected input folder is not usable.",
+      invalidOutputDir: "The selected output folder is not usable.",
+      invalidSelection: "One of the selected review images is not valid for its group.",
+      inputOutputConflict:
+        "The input and output folders must be different and must not be nested inside each other.",
+      runInProgress: "A dedupe run is already in progress.",
+      cancelled: "The run was cancelled.",
+      readDirFailed: "The app could not read one of the required folders.",
+      loadImageFailed: "The app could not load one of the images needed for this run.",
+      copyImageFailed: "The app could not copy one of the selected images.",
+      unexpected: "Unexpected backend error ({code}). Check developer logs.",
+    },
+  },
+  units: {
+    megabytes: "MB",
+  },
+  updates: {
+    confirmInstall: "Version {version} is available. Install and restart now?",
+  },
+};

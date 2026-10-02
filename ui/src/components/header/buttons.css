@@ -1,0 +1,75 @@
+.app-button-icon,
+.app-button-ghost,
+.app-button-primary {
+  cursor: pointer;
+  transition:
+    transform var(--duration-normal) var(--easing-standard),
+    border-color var(--duration-normal) var(--easing-standard),
+    background var(--duration-normal) var(--easing-standard),
+    box-shadow var(--duration-normal) var(--easing-standard);
+}
+
+.app-button-icon,
+.app-button-ghost {
+  border: var(--border-width-thin) solid var(--color-border-subtle);
+  color: var(--color-text-primary);
+}
+
+.app-button-icon {
+  width: var(--size-button-icon);
+  height: var(--size-button-icon);
+  border-radius: var(--radius-lg);
+  display: inline-grid;
+  place-items: center;
+  background: var(--color-action-secondary-bg);
+  box-shadow: var(--shadow-soft);
+}
+
+.app-button-icon-glyph {
+  font-size: var(--font-size-icon-md);
+  line-height: 1;
+}
+
+.app-button-ghost {
+  padding: var(--space-2-5) var(--space-4);
+  border-radius: var(--radius-full);
+  background: var(--color-bg-muted);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-semibold);
+}
+
+.app-button-icon:hover,
+.app-button-icon:focus-visible,
+.app-button-ghost:hover,
+.app-button-ghost:focus-visible {
+  transform: translateY(var(--size-hover-lift));
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-interactive);
+}
+
+.app-button-primary {
+  height: var(--size-button-primary-height);
+  padding: 0 var(--space-4-5);
+  border: none;
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(var(--angle-primary-action), var(--color-action-primary-bg), var(--color-action-primary-accent));
+  color: var(--color-action-primary-text);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.app-button-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.app-button-primary:not(:disabled):hover,
+.app-button-primary:not(:disabled):focus-visible {
+  transform: translateY(var(--size-hover-lift));
+  box-shadow: var(--shadow-primary);
+}

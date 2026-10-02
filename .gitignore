@@ -1,0 +1,42 @@
+# Rust / Cargo
+**/target/
+**/*.rs.bk
+
+# Tauri output artifacts
+src-tauri/output/
+
+# Snapcraft build artifacts
+/parts/
+/prime/
+/stage/
+/.craft/
+*.snap
+/.snapcraft-credentials
+/.tauri-updater.key
+/.tauri-updater.key.pub
+
+# Logs
+*.log
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Frontend build artifacts (if applicable)
+ui/node_modules/
+ui/dist/
+ui/.parcel-cache/
+ui/.vite/
+ui/test-results/
+ui/playwright-report/
+ui/coverage/
+coverage/
+
+# Test data (ignored per request)
+test-data/

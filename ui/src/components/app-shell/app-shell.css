@@ -1,0 +1,93 @@
+.app-shell {
+  min-height: var(--size-viewport-height);
+  display: grid;
+  place-items: center;
+}
+
+.app-shell__inner {
+  width: min(var(--size-panel-width), var(--size-panel-width-fluid));
+  padding: var(--space-6);
+}
+
+.app-card-stage {
+  position: relative;
+  perspective: var(--size-card-stage-perspective);
+  transition: height var(--duration-slow) var(--easing-standard);
+}
+
+.app-panel {
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  transition:
+    opacity var(--duration-slow) var(--easing-standard),
+    transform var(--duration-panel-flip) var(--easing-emphasized),
+    filter var(--duration-slow) var(--easing-standard);
+  transform-origin: center;
+  backface-visibility: hidden;
+}
+
+.app-card-stage[data-view="main"] .app-panel--main,
+.app-card-stage[data-view="settings"] .app-panel--settings {
+  position: relative;
+  inset: auto;
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+  filter: none;
+}
+
+.app-card-stage[data-view="main"] .app-panel--settings {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(var(--size-panel-shift)) rotateY(calc(-1 * var(--size-panel-tilt))) scale(var(--size-panel-scale));
+  filter: blur(var(--size-panel-blur));
+}
+
+.app-card-stage[data-view="settings"] .app-panel--main {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(calc(-1 * var(--size-panel-shift))) rotateY(var(--size-panel-tilt)) scale(var(--size-panel-scale));
+  filter: blur(var(--size-panel-blur));
+}
+
+.app-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: clamp(var(--space-5), 4vh, var(--space-8));
+  min-height: var(--size-card-stage-min-height);
+  padding: var(--space-8) var(--space-6);
+  border-radius: var(--radius-2xl);
+  background: linear-gradient(var(--angle-card), var(--color-bg-card-strong), var(--color-card-gradient-end));
+  box-shadow: var(--shadow-panel);
+}
+
+.app-card__primary,
+.app-card__results {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-card__primary {
+  flex: 1 1 auto;
+  justify-content: space-between;
+  gap: clamp(var(--space-6), 3vh, var(--space-8));
+}
+
+.app-card__results {
+  gap: var(--space-4);
+  margin-block: auto 0;
+}
+
+@media (max-width: var(--breakpoint-sm)) {
+  .app-shell__inner {
+    width: min(var(--size-viewport-width), 100%);
+    padding: var(--space-5);
+  }
+
+  .app-card {
+    min-height: var(--size-card-stage-min-height-compact);
+    padding: var(--space-6);
+  }
+}

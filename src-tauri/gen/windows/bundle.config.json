@@ -1,0 +1,22 @@
+{
+  "displayName": "aba-avner",
+  "identifier": "tomerdev.AbaAvner",
+  "publisher": "CN=A8E7E0D9-58CE-4E17-B47A-403BDD24E966",
+  "publisherDisplayName": "tomerdev",
+  "capabilities": {
+    "general": []
+  },
+  "extensions": {
+    "shareTarget": false,
+    "fileAssociations": [],
+    "protocolHandlers": []
+  },
+  "signing": {
+    "pfx": null,
+    "pfxPassword": null
+  },
+  "resourceIndex": {
+    "enabled": false,
+    "keepConfig": false
+  }
+}

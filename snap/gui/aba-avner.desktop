@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Aba Avner
+Exec=aba-avner
+Icon=${SNAP}/meta/gui/icon.png
+Terminal=false
+Categories=Graphics;Utility;
+StartupWMClass=aba-avner

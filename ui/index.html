@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en" data-theme="default">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="aba-app">
+    <main class="app-shell shell">
+      <div class="app-shell__inner">
+        <section id="cardStage" class="app-card-stage" data-view="main">
+          <section id="mainCard" class="app-card app-panel app-panel--main">
+            <div class="app-card__primary">
+              <header class="app-header">
+                <div>
+                  <p id="appEyebrow" class="app-eyebrow"></p>
+                  <h1 class="app-title"></h1>
+                  <p id="appSubtitle" class="app-subtitle"></p>
+                </div>
+
+                <div id="headerControls" class="app-header-controls">
+                  <button
+                    id="settingsButton"
+                    class="app-button-icon"
+                    type="button"
+                    aria-label=""
+                    aria-controls="cardStage"
+                    aria-expanded="false"
+                  >
+                    <span class="app-button-icon-glyph" aria-hidden="true">⚙</span>
+                  </button>
+
+                  <div class="app-locale">
+                    <button
+                      id="languageButton"
+                      class="app-locale__trigger"
+                      type="button"
+                      aria-label=""
+                      aria-haspopup="menu"
+                      aria-expanded="false"
+                      aria-controls="languageMenu"
+                    ></button>
+                    <div id="languageMenu" class="app-locale__menu" role="menu" hidden>
+                      <button
+                        id="localeEnButton"
+                        class="app-locale__option"
+                        type="button"
+                        role="menuitemradio"
+                        aria-pressed="true"
+                      ></button>
+                      <button
+                        id="localeHeButton"
+                        class="app-locale__option"
+                        type="button"
+                        role="menuitemradio"
+                        aria-pressed="false"
+                      ></button>
+                    </div>
+                  </div>
+                </div>
+              </header>
+
+              <button id="startButton" class="app-button-primary"></button>
+
+              <div class="app-progress" aria-live="polite" aria-atomic="true">
+                <div class="app-progress__track">
+                  <div
+                    id="progressBar"
+                    class="app-progress__bar"
+                    role="progressbar"
+                    aria-label=""
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-valuenow="0"
+                  ></div>
+                </div>
+                <div class="app-progress__meta">
+                  <span id="progressStage" role="status"></span>
+                  <span id="progressPercent"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="app-card__results">
+              <section
+                id="reviewPanel"
+                class="app-review"
+                hidden
+                aria-live="polite"
+                aria-atomic="true"
+              >
+                <div class="app-review__header">
+                  <div>
+                    <span id="reviewBadge" class="app-review__badge"></span>
+                    <h2 id="reviewTitle" class="app-review__title"></h2>
+                  </div>
+                  <p id="reviewHint" class="app-review__hint"></p>
+                </div>
+                <p id="reviewEmpty" class="app-review__empty" hidden></p>
+                <div id="reviewGroups" class="app-review__groups"></div>
+                <div class="app-review__actions">
+                  <button id="reviewApplyButton" class="app-button-primary" type="button"></button>
+                  <button id="reviewCancelButton" class="app-button-ghost" type="button"></button>
+                </div>
+              </section>
+
+              <section
+                id="summaryPanel"
+                class="app-summary"
+                hidden
+                aria-live="polite"
+                aria-atomic="true"
+              >
+                <div class="app-summary__header">
+                  <span id="summaryBadge" class="app-summary__badge"></span>
+                  <div class="app-summary__header-actions">
+                    <span id="summaryHint" class="app-summary__hint"></span>
+                    <button
+                      id="summaryToggleButton"
+                      class="app-summary__toggle"
+                      type="button"
+                      aria-expanded="false"
+                      aria-controls="summaryDetails"
+                    ></button>
+                  </div>
+                </div>
+                <dl class="app-summary__stats">
+                  <div class="app-summary__stat">
+                    <dt id="summaryTotalLabel" class="app-summary__label"></dt>
+                    <dd id="summaryTotalValue" class="app-summary__value"></dd>
+                  </div>
+                  <div class="app-summary__stat">
+                    <dt id="summaryDuplicateLabel" class="app-summary__label"></dt>
+                    <dd id="summaryDuplicateValue" class="app-summary__value"></dd>
+                  </div>
+                  <div class="app-summary__stat app-summary__stat--accent">
+                    <dt id="summaryStorageSavedLabel" class="app-summary__label"></dt>
+                    <dd id="summaryStorageSavedValue" class="app-summary__value"></dd>
+                  </div>
+                </dl>
+                <div id="summaryDetails" class="app-summary__details" hidden>
+                  <p id="summaryReportNote" class="app-summary__report-note" hidden></p>
+                  <section id="summaryBreakdown" class="app-summary__breakdown" hidden>
+                    <div class="app-summary__breakdown-header">
+                      <h2 id="summaryBreakdownTitle" class="app-summary__breakdown-title"></h2>
+                      <p id="summaryBreakdownHint" class="app-summary__breakdown-hint"></p>
+                    </div>
+                    <p id="summaryBreakdownEmpty" class="app-summary__breakdown-empty" hidden></p>
+                    <ul id="summaryBreakdownList" class="app-summary__breakdown-list"></ul>
+                  </section>
+                </div>
+                <p id="summaryOutput" class="app-summary__output"></p>
+              </section>
+
+              <section
+                id="issuesPanel"
+                class="app-issues"
+                hidden
+                aria-live="polite"
+                aria-atomic="true"
+              >
+                <div class="app-issues__header">
+                  <span id="issuesBadge" class="app-issues__badge"></span>
+                  <span id="issuesHint" class="app-issues__hint"></span>
+                </div>
+                <ul id="issuesList" class="app-issues__list"></ul>
+              </section>
+            </div>
+          </section>
+
+          <section
+            id="settingsCard"
+            class="app-card app-panel app-panel--settings"
+            aria-hidden="true"
+            tabindex="-1"
+          >
+            <header class="app-settings-header">
+              <div>
+                <p id="settingsEyebrow" class="app-eyebrow"></p>
+                <h2 id="settingsTitle" class="app-section-title"></h2>
+              </div>
+              <div class="app-settings-header__actions">
+                <button id="resetSettingsButton" class="app-button-ghost" type="button"></button>
+                <button id="backButton" class="app-button-ghost" type="button"></button>
+              </div>
+            </header>
+
+            <div class="app-settings__block">
+              <div class="app-settings__copy">
+                <p id="minSizeLabel" class="app-settings__label"></p>
+                <p id="minSizeDescription" class="app-settings__description"></p>
+              </div>
+
+              <div class="app-slider">
+                <label for="minSizeSlider" class="app-slider__label">
+                  <span id="minSizePrompt"></span>
+                  <span id="minSizeValue" class="app-slider__value"></span>
+                </label>
+                <input
+                  id="minSizeSlider"
+                  class="app-slider__input"
+                  type="range"
+                  aria-describedby="minSizeDescription minSizeValue"
+                  min="0"
+                  max="5"
+                  step="0.1"
+                  value="0"
+                />
+              </div>
+            </div>
+
+            <div class="app-settings__block">
+              <div class="app-settings__copy">
+                <p id="similarityThresholdLabel" class="app-settings__label"></p>
+                <p id="similarityThresholdDescription" class="app-settings__description"></p>
+              </div>
+
+              <div class="app-slider">
+                <label for="similarityThresholdInput" class="app-slider__label">
+                  <span id="similarityThresholdPrompt"></span>
+                  <span id="similarityThresholdValue" class="app-slider__value"></span>
+                </label>
+                <input
+                  id="similarityThresholdInput"
+                  class="app-slider__input"
+                  type="range"
+                  aria-describedby="similarityThresholdDescription similarityThresholdValue"
+                  min="0"
+                  max="20"
+                  step="1"
+                  value="10"
+                />
+                <div class="app-slider__range-labels" aria-hidden="true">
+                  <span id="similarityThresholdMinLabel"></span>
+                  <span id="similarityThresholdMaxLabel"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="app-settings__block">
+              <label class="app-toggle">
+                <input
+                  id="existingOutputToggle"
+                  class="app-toggle__input"
+                  type="checkbox"
+                  aria-describedby="existingOutputDescription"
+                  checked
+                />
+                <span class="app-settings__copy">
+                  <span id="existingOutputLabel" class="app-settings__label"></span>
+                  <span id="existingOutputDescription" class="app-settings__description"></span>
+                </span>
+              </label>
+            </div>
+
+            <div class="app-settings__block">
+              <label class="app-toggle">
+                <input
+                  id="visualReviewToggle"
+                  class="app-toggle__input"
+                  type="checkbox"
+                  aria-describedby="visualReviewDescription"
+                  checked
+                />
+                <span class="app-settings__copy">
+                  <span id="visualReviewLabel" class="app-settings__label"></span>
+                  <span id="visualReviewDescription" class="app-settings__description"></span>
+                </span>
+              </label>
+            </div>
+
+            <div class="app-settings__block">
+              <label class="app-toggle">
+                <input
+                  id="exportGroupsToggle"
+                  class="app-toggle__input"
+                  type="checkbox"
+                  aria-describedby="exportGroupsDescription"
+                  checked
+                />
+                <span class="app-settings__copy">
+                  <span id="exportGroupsLabel" class="app-settings__label"></span>
+                  <span id="exportGroupsDescription" class="app-settings__description"></span>
+                </span>
+              </label>
+            </div>
+          </section>
+        </section>
+      </div>
+    </main>
+
+    <script src="visual-harness.js"></script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

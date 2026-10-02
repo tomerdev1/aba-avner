@@ -1,0 +1,68 @@
+name: aba-avner
+title: Aba Avner
+base: core24
+version: "0.1.0"
+contact: https://github.com/tomerdev1/aba-avner/issues
+source-code: https://github.com/tomerdev1/aba-avner
+license: GPL-3.0-or-later
+summary: Find duplicate and near-duplicate photos, keep only what's unique.
+description: |
+  Your photo library fills up with duplicates, renamed copies, and burst
+  shots that all look the same. Aba Avner scans a folder, finds every
+  exact and visually-similar match, and builds a clean output folder with
+  just the images worth keeping — your originals are never touched.
+  .
+  What it does:
+  .
+  - recursively scans a folder (and subfolders) for images
+  - detects exact duplicates and visually similar near-duplicates using
+    perceptual hashing, not just byte-for-byte comparison
+  - groups matches together and suggests one keeper per group
+  - lets you review each group and swap in a different keeper before
+    anything is copied — or skip review and trust the suggestions
+  - tunes similarity sensitivity and minimum file size to fit your library
+  - skips images already present in your output folder, so re-runs are fast
+  - runs fully offline: no account, no cloud upload, no tracking
+  - available in English and Hebrew
+  .
+  Built with Tauri + Rust: a small, fast, native desktop app.
+  .
+  This snap uses strict confinement. In practice that means:
+  .
+  - regular files in the user's home directory work through the `home` interface
+  - external drives require the `removable-media` interface to be connected
+  - hidden dot-directories and arbitrary system paths are not part of the default
+    supported flow
+grade: stable
+confinement: strict
+icon: snap/gui/icon.png
+
+apps:
+  aba-avner:
+    command: bin/aba-avner
+    desktop: snap/gui/aba-avner.desktop
+    extensions:
+      - gnome
+    plugs:
+      - home
+      - removable-media
+
+parts:
+  gui:
+    plugin: dump
+    source: snap/gui
+    organize:
+      aba-avner.desktop: snap/gui/aba-avner.desktop
+      icon.png: snap/gui/icon.png
+
+  aba-avner:
+    plugin: rust
+    source: .
+    source-subdir: src-tauri
+    build-packages:
+      - libwebkit2gtk-4.1-dev
+      - libjavascriptcoregtk-4.1-dev
+      - libgtk-3-dev
+      - libayatana-appindicator3-dev
+      - librsvg2-dev
+      - pkg-config

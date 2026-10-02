@@ -1,0 +1,26 @@
+.app-progress {
+  display: grid;
+  gap: var(--space-2-5);
+}
+
+.app-progress__track {
+  width: 100%;
+  height: var(--size-progress-height);
+  overflow: hidden;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-track);
+}
+
+.app-progress__bar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(var(--angle-progress), var(--color-action-primary-bg), var(--color-progress-end));
+  transition: width var(--duration-progress) var(--easing-standard);
+}
+
+.app-progress__meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-caption);
+  color: var(--color-text-secondary);
+}
