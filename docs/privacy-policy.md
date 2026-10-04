@@ -11,16 +11,28 @@ an output folder you choose.
 
 Aba Avner does not collect, transmit, or sell any data. Specifically, it:
 
-- runs entirely on your device — it never connects to the internet
+- runs entirely on your device — your photos and data never leave it
 - does not create an account, require sign-in, or use analytics/telemetry
 - does not upload your photos, filenames, or folder paths anywhere
 - only reads and writes files inside the folders you explicitly select
   through the app's file picker
 
+## Update checks
+
+The Microsoft Store and Snap Store versions never connect to the internet;
+their stores deliver updates.
+
+Versions downloaded directly from GitHub check for a newer version when they
+start, by downloading a small version file from GitHub. That request contains
+no personal data or information about your files, but like any web request it
+reveals your IP address to GitHub (see
+[GitHub's privacy statement](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement)).
+Updates are only installed if you approve them.
+
 ## Permissions
 
-The Windows app is a standard desktop installer with no special OS
-permissions beyond reading/writing the files and folders you choose. It does
+The app needs no special OS permissions beyond reading and writing the files
+and folders you choose. It does
 not access your camera, microphone, location, or contacts.
 
 ## Children's privacy
