@@ -40,6 +40,8 @@ export const heMessages = {
     exportGroupsLabel: 'ייצוא תיקיית "קבוצות תמונות דומות"',
     exportGroupsDescription:
       "צור את תיקיית הייחוס של קבוצות הכפילויות לצד תיקיית הייצוא המסוננת.",
+    licenseNotice:
+      "Aba Avner היא תוכנה חופשית ברישיון GNU GPL גרסה 3 ואילך, ללא אחריות. קוד המקור: github.com/tomerdev1/aba-avner",
   },
   dialogs: {
     selectInput: "בחר תיקיית מקור לתמונות",
