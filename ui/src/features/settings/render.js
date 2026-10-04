@@ -93,6 +93,9 @@ export function renderSettingsCard(state, elements, t) {
   if (elements.exportGroupsDescription) {
     elements.exportGroupsDescription.textContent = t("settings.exportGroupsDescription");
   }
+  if (elements.licenseNotice) {
+    elements.licenseNotice.textContent = t("settings.licenseNotice");
+  }
   if (elements.exportGroupsToggle) {
     elements.exportGroupsToggle.checked = Boolean(state.exportSimilarImageGroups);
     elements.exportGroupsToggle.setAttribute("aria-label", t("settings.exportGroupsLabel"));

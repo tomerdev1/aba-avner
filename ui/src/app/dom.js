@@ -123,5 +123,6 @@ function getSettingsElements() {
     exportGroupsToggle: document.getElementById("exportGroupsToggle"),
     exportGroupsLabel: document.getElementById("exportGroupsLabel"),
     exportGroupsDescription: document.getElementById("exportGroupsDescription"),
+    licenseNotice: document.getElementById("licenseNotice"),
   };
 }

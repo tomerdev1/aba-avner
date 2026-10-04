@@ -40,6 +40,8 @@ export const enMessages = {
     exportGroupsLabel: 'Export "similar image groups" folder',
     exportGroupsDescription:
       "Create the duplicate-group reference folder alongside the deduped export output.",
+    licenseNotice:
+      "Aba Avner is free software under the GNU GPL v3 or later, with no warranty. Source code: github.com/tomerdev1/aba-avner",
   },
   dialogs: {
     selectInput: "Select the image source folder",
