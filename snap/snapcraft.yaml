@@ -22,7 +22,7 @@ description: |
     anything is copied — or skip review and trust the suggestions
   - tunes similarity sensitivity and minimum file size to fit your library
   - skips images already present in your output folder, so re-runs are fast
-  - runs fully offline: no account, no cloud upload, no tracking
+  - your photos never leave your device: no account, no cloud upload, no tracking
   - available in English and Hebrew
   .
   Built with Tauri + Rust: a small, fast, native desktop app.
