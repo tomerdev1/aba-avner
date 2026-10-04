@@ -1,7 +1,7 @@
 name: aba-avner
 title: Aba Avner
 base: core24
-version: "0.1.0"
+version: "0.1.1"
 contact: https://github.com/tomerdev1/aba-avner/issues
 source-code: https://github.com/tomerdev1/aba-avner
 license: GPL-3.0-or-later
