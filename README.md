@@ -243,7 +243,6 @@ Because this is a strict snap, hidden dot-directories in `$HOME` and arbitrary
 system paths are not part of the default supported publish target.
 
 ## Microsoft Store
-See [`docs/microsoft-store-submission.md`](docs/microsoft-store-submission.md).
 Recommended path: MSIX, built via `tauri-windows-bundle` and uploaded by CI as the
 `windows-msix` artifact — free code signing (Microsoft re-signs it) and free
 automatic updates via Windows Update. A plain NSIS installer (`cargo tauri build

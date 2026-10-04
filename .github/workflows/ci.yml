@@ -127,7 +127,7 @@ jobs:
         if: matrix.os == 'windows-latest'
         run: cargo install msixbundle-cli --locked
 
-      - name: Build MSIX package (Windows, free Store code signing - see docs/microsoft-store-submission.md)
+      - name: Build MSIX package (Windows, free Store code signing)
         if: matrix.os == 'windows-latest'
         run: npx @choochmeque/tauri-windows-bundle@latest build --arch x64 --runner cargo
 
