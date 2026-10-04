@@ -1,6 +1,6 @@
 {
   "productName": "Aba Avner",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "identifier": "com.tomer.aba-avner",
   "build": {
     "beforeBuildCommand": { "script": "bash prepare-ui.sh", "cwd": "scripts" },
