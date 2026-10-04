@@ -37,6 +37,13 @@
   filter: none;
 }
 
+/* Hidden panel is absolute; clip it to the stage so a taller one can't extend the page scroll. */
+.app-card-stage[data-view="main"] .app-panel--settings,
+.app-card-stage[data-view="settings"] .app-panel--main {
+  min-height: 0;
+  overflow: hidden;
+}
+
 .app-card-stage[data-view="main"] .app-panel--settings {
   opacity: 0;
   pointer-events: none;
