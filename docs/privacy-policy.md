@@ -1,7 +1,7 @@
 <!-- title: Aba Avner Privacy Policy -->
 # Aba Avner Privacy Policy
 
-_Last updated: August 22, 2026_
+_Last updated: October 4, 2026_
 
 Aba Avner is a desktop application that scans a folder you choose, finds
 duplicate and visually similar images, and copies the ones worth keeping into
