@@ -23,7 +23,7 @@ description: |
   - tunes similarity sensitivity and minimum file size to fit your library
   - skips images already present in your output folder, so re-runs are fast
   - your photos never leave your device: no account, no cloud upload, no tracking
-  - available in English and Hebrew
+  - available in English, Hebrew, Spanish, Chinese, Filipino, Swahili and Tok Pisin
   .
   Built with Tauri + Rust: a small, fast, native desktop app.
   .
