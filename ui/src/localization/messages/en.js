@@ -12,10 +12,6 @@ export const enMessages = {
     starting: "Starting",
     cancelling: "Cancelling",
   },
-  locales: {
-    en: "English",
-    he: "Hebrew",
-  },
   settings: {
     eyebrow: "Preferences",
     title: "Settings",

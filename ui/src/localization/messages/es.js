@@ -1,0 +1,116 @@
+export const esMessages = {
+  app: {
+    title: "Aba Avner",
+    eyebrow: "Eliminador visual de duplicados",
+    subtitle: "Un clic. Una carpeta limpia.",
+    openSettings: "Abrir ajustes",
+    openLanguageMenu: "Abrir menú de idioma",
+    startRun: "Elegir carpetas y ejecutar",
+    cancelRun: "Cancelar ejecución",
+    idle: "En espera",
+    working: "Trabajando",
+    starting: "Iniciando",
+    cancelling: "Cancelando",
+  },
+  settings: {
+    eyebrow: "Preferencias",
+    title: "Ajustes",
+    back: "Atrás",
+    reset: "Restablecer valores",
+    minSizeLabel: "Tamaño mínimo de imagen",
+    minSizeDescription:
+      "Omite las imágenes diminutas antes de buscar duplicados para centrarte en los archivos que importan.",
+    ignoreSmallerThan: "Ignorar imágenes menores de",
+    similarityThresholdLabel: "Umbral de similitud",
+    similarityThresholdDescription:
+      "Controla la tolerancia de la comparación cuando dos imágenes se parecen pero no son idénticas.",
+    matchImagesWithin: "Considerar iguales dentro de",
+    similarityThresholdMin: "Coincidencia estricta",
+    similarityThresholdMax: "Coincidencia flexible",
+    filterExistingOutputLabel: "Omitir imágenes que ya están en la salida",
+    filterExistingOutputDescription:
+      "Compara las imágenes únicas con la carpeta de destino y omite las que ya tienen una coincidencia similar allí.",
+    visualReviewLabel: "Paso de revisión visual de duplicados",
+    visualReviewDescription:
+      "Haz una pausa tras agrupar para elegir una imagen que conservar de cada grupo de duplicados antes de exportar.",
+    exportGroupsLabel: 'Exportar carpeta de "grupos de imágenes similares"',
+    exportGroupsDescription:
+      "Crea la carpeta de referencia de grupos de duplicados junto a la salida exportada.",
+    licenseNotice:
+      "Aba Avner es software libre bajo la GNU GPL v3 o posterior, sin garantía. Código fuente: github.com/tomerdev1/aba-avner",
+  },
+  dialogs: {
+    selectInput: "Selecciona la carpeta de origen de las imágenes",
+    selectOutput: "Selecciona la carpeta de salida",
+  },
+  progress: {
+    label: "Progreso",
+    scan: "Escaneando",
+    hash: "Calculando hashes",
+    group: "Agrupando",
+    review: "Revisando",
+    copy: "Copiando",
+  },
+  review: {
+    badge: "Revisión",
+    title: "Revisar grupos de duplicados",
+    hint: "Elige una imagen que conservar de cada grupo de duplicados antes de exportar.",
+    empty: "Ningún grupo de duplicados requiere revisión manual. Pulsa Aplicar y exportar para continuar.",
+    groupLabel: "Grupo {index}",
+    apply: "Aplicar y exportar",
+    cancel: "Cancelar",
+  },
+  summary: {
+    badge: "Resumen",
+    hint: "Última ejecución completada",
+    totalLabel: "Imágenes escaneadas",
+    uniqueLabel: "Únicas copiadas",
+    duplicateLabel: "Duplicados eliminados",
+    storageSavedLabel: "Espacio ahorrado",
+    showDetails: "Mostrar detalles",
+    hideDetails: "Ocultar detalles",
+    reportMismatch:
+      "La agrupación encontró {groupedUniqueImages} representantes antes de filtrar por la carpeta de salida. Se copiaron {copiedUniqueImages}.",
+    folderBreakdownTitle: "Carpetas con más espacio desperdiciado en duplicados",
+    folderBreakdownHint: "Mayor número de duplicados y espacio desperdiciado por carpeta de origen.",
+    folderBreakdownEmpty: "No hay carpetas destacadas en esta ejecución.",
+    folderDuplicates: "{count} duplicados",
+    outputDir: "Carpeta de salida: {path}",
+  },
+  issues: {
+    tauriUnavailableTitle: "Tauri no disponible",
+    tauriUnavailableHint: "Se necesitan las API de escritorio para ejecutar esta acción.",
+    tauriUnavailableItem: "Las API de Tauri no están disponibles.",
+    runFailedTitle: "La ejecución falló",
+    runFailedHint: "El proceso se detuvo antes de terminar.",
+    runCancelledTitle: "Ejecución cancelada",
+    runCancelledHint: "El proceso se detuvo antes de terminar.",
+    warningsTitle: "{count} advertencias",
+    warningsHint: "Revisa los archivos omitidos y los problemas no críticos.",
+    warningItems: {
+      fileIssue: "{path}: {detail}",
+      outputDirScanFailed: "{path}: {detail}",
+      similarImageInOutput:
+        "Se omitió {path} porque ya existe una imagen similar en la carpeta de salida.",
+    },
+    errors: {
+      invalidInputDir: "La carpeta de entrada seleccionada no se puede usar.",
+      invalidOutputDir: "La carpeta de salida seleccionada no se puede usar.",
+      invalidSelection: "Una de las imágenes elegidas en la revisión no es válida para su grupo.",
+      inputOutputConflict:
+        "Las carpetas de entrada y salida deben ser distintas y no pueden estar una dentro de la otra.",
+      runInProgress: "Ya hay una ejecución en curso.",
+      cancelled: "La ejecución se canceló.",
+      readDirFailed: "La aplicación no pudo leer una de las carpetas necesarias.",
+      loadImageFailed: "La aplicación no pudo cargar una de las imágenes necesarias para esta ejecución.",
+      copyImageFailed: "La aplicación no pudo copiar una de las imágenes seleccionadas.",
+      unexpected: "Error inesperado del backend ({code}). Revisa los registros de desarrollo.",
+    },
+  },
+  units: {
+    megabytes: "MB",
+  },
+  updates: {
+    confirmInstall: "La versión {version} está disponible. ¿Instalar y reiniciar ahora?",
+  },
+};

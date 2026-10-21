@@ -1,0 +1,116 @@
+export const filMessages = {
+  app: {
+    title: "Aba Avner",
+    eyebrow: "Visual na tagatanggal ng duplicate",
+    subtitle: "Isang click. Isang malinis na folder.",
+    openSettings: "Buksan ang settings",
+    openLanguageMenu: "Buksan ang menu ng wika",
+    startRun: "Pumili ng folder at Patakbuhin",
+    cancelRun: "Ikansela ang pagpapatakbo",
+    idle: "Naka-idle",
+    working: "Gumagana",
+    starting: "Nagsisimula",
+    cancelling: "Kinakansela",
+  },
+  settings: {
+    eyebrow: "Mga kagustuhan",
+    title: "Settings",
+    back: "Bumalik",
+    reset: "I-reset sa default",
+    minSizeLabel: "Pinakamaliit na laki ng larawan",
+    minSizeDescription:
+      "Laktawan ang napakaliit na larawan bago mag-dedupe para nakatutok ang scan sa mahahalagang file.",
+    ignoreSmallerThan: "Huwag pansinin ang larawang mas maliit sa",
+    similarityThresholdLabel: "Antas ng pagkakahawig",
+    similarityThresholdDescription:
+      "Kontrolin kung gaano kaluwag ang pagtutugma kapag magkahawig ang dalawang larawan pero hindi magkapareho.",
+    matchImagesWithin: "Itugma ang larawan sa loob ng",
+    similarityThresholdMin: "Mas mahigpit",
+    similarityThresholdMax: "Mas maluwag",
+    filterExistingOutputLabel: "Laktawan ang larawang nasa output na",
+    filterExistingOutputDescription:
+      "Ihambing ang mga bagong natatanging larawan sa destination folder at laktawan ang may kahawig na roon.",
+    visualReviewLabel: "Hakbang sa visual na pagsusuri ng duplicate",
+    visualReviewDescription:
+      "Huminto pagkatapos mag-grupo para makapili ng isang larawang itatago sa bawat grupo ng duplicate bago i-export.",
+    exportGroupsLabel: 'I-export ang folder na "mga grupo ng magkahawig na larawan"',
+    exportGroupsDescription:
+      "Gumawa ng reference folder ng mga grupo ng duplicate katabi ng na-dedupe na output.",
+    licenseNotice:
+      "Ang Aba Avner ay libreng software sa ilalim ng GNU GPL v3 o mas bago, walang warranty. Source code: github.com/tomerdev1/aba-avner",
+  },
+  dialogs: {
+    selectInput: "Piliin ang source folder ng mga larawan",
+    selectOutput: "Piliin ang output folder",
+  },
+  progress: {
+    label: "Progreso ng dedupe",
+    scan: "Nag-i-scan",
+    hash: "Nagha-hash",
+    group: "Nag-gugrupo",
+    review: "Sinusuri",
+    copy: "Kinokopya",
+  },
+  review: {
+    badge: "Pagsusuri",
+    title: "Suriin ang mga grupo ng duplicate",
+    hint: "Pumili ng isang larawang itatago sa bawat grupo ng duplicate bago i-export.",
+    empty: "Walang grupo ng duplicate na kailangang suriin nang manu-mano. I-click ang Ilapat at I-export para magpatuloy.",
+    groupLabel: "Grupo {index}",
+    apply: "Ilapat at I-export",
+    cancel: "Kanselahin",
+  },
+  summary: {
+    badge: "Buod ng takbo",
+    hint: "Huling natapos na takbo",
+    totalLabel: "Mga larawang na-scan",
+    uniqueLabel: "Natatanging nakopya",
+    duplicateLabel: "Duplicate na naalis",
+    storageSavedLabel: "Natipid na espasyo",
+    showDetails: "Ipakita ang detalye",
+    hideDetails: "Itago ang detalye",
+    reportMismatch:
+      "Nakahanap ang pag-gugrupo ng {groupedUniqueImages} kinatawan bago i-filter ayon sa output folder. {copiedUniqueImages} ang aktwal na nakopya.",
+    folderBreakdownTitle: "Mga folder na may pinakamaraming nasayang sa duplicate",
+    folderBreakdownHint: "Pinakamaraming duplicate at nasayang na espasyo ayon sa source folder.",
+    folderBreakdownEmpty: "Walang namumukod na folder sa takbong ito.",
+    folderDuplicates: "{count} duplicate",
+    outputDir: "Output folder: {path}",
+  },
+  issues: {
+    tauriUnavailableTitle: "Hindi available ang Tauri",
+    tauriUnavailableHint: "Kailangan ang mga desktop API para patakbuhin ang aksyong ito.",
+    tauriUnavailableItem: "Hindi available ang mga Tauri API.",
+    runFailedTitle: "Nabigo ang takbo",
+    runFailedHint: "Huminto ang proseso bago natapos.",
+    runCancelledTitle: "Nakansela ang takbo",
+    runCancelledHint: "Pinahinto ang proseso bago natapos.",
+    warningsTitle: "{count} babala",
+    warningsHint: "Suriin ang mga nilaktawang file at hindi malalang problema.",
+    warningItems: {
+      fileIssue: "{path}: {detail}",
+      outputDirScanFailed: "{path}: {detail}",
+      similarImageInOutput:
+        "Nilaktawan ang {path} dahil may magkahawig nang larawan sa output folder.",
+    },
+    errors: {
+      invalidInputDir: "Hindi magagamit ang napiling input folder.",
+      invalidOutputDir: "Hindi magagamit ang napiling output folder.",
+      invalidSelection: "Hindi wasto para sa grupo nito ang isa sa mga napiling larawan sa pagsusuri.",
+      inputOutputConflict:
+        "Dapat magkaiba ang input at output folder at hindi dapat nasa loob ng isa't isa.",
+      runInProgress: "May dedupe na tumatakbo na.",
+      cancelled: "Nakansela ang takbo.",
+      readDirFailed: "Hindi mabasa ng app ang isa sa mga kinakailangang folder.",
+      loadImageFailed: "Hindi ma-load ng app ang isa sa mga larawang kailangan sa takbong ito.",
+      copyImageFailed: "Hindi makopya ng app ang isa sa mga napiling larawan.",
+      unexpected: "Hindi inaasahang backend error ({code}). Tingnan ang developer logs.",
+    },
+  },
+  units: {
+    megabytes: "MB",
+  },
+  updates: {
+    confirmInstall: "Available na ang bersyon {version}. I-install at mag-restart ngayon?",
+  },
+};

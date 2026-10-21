@@ -1,10 +1,8 @@
 export function bindLanguageMenuInteractions(elements, app, options = {}) {
   const documentRef = options.documentRef ?? globalThis.document;
+  const localeButtons = () => elements.localeButtons ?? [];
   const selectedLocaleButton = () =>
-    elements.localeHeButton?.getAttribute("aria-pressed") === "true"
-      ? elements.localeHeButton
-      : elements.localeEnButton;
-  const localeButtons = () => [elements.localeEnButton, elements.localeHeButton].filter(Boolean);
+    localeButtons().find((button) => button.getAttribute("aria-pressed") === "true");
 
   function focusLanguageTrigger() {
     elements.languageButton?.focus();
@@ -48,14 +46,12 @@ export function bindLanguageMenuInteractions(elements, app, options = {}) {
       focusSelectedLocale();
     }
   });
-  elements.localeEnButton?.addEventListener("click", () => {
-    app.setLocale("en");
-    focusLanguageTrigger();
-  });
-  elements.localeHeButton?.addEventListener("click", () => {
-    app.setLocale("he");
-    focusLanguageTrigger();
-  });
+  for (const button of localeButtons()) {
+    button.addEventListener("click", () => {
+      app.setLocale(button.dataset.locale);
+      focusLanguageTrigger();
+    });
+  }
 
   elements.languageButton?.addEventListener("keydown", (event) => {
     if (event.key !== "ArrowDown" && event.key !== "ArrowUp") {

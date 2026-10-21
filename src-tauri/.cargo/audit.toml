@@ -1,0 +1,4 @@
+[advisories]
+# ponytail: zip 4.x is pinned by tauri-plugin-updater (still on 4.x at 2.14). It only unpacks
+# update bundles that passed minisign verification against our key. Drop once the plugin moves to zip >=9.
+ignore = ["RUSTSEC-2026-0367", "RUSTSEC-2026-0368", "RUSTSEC-2026-0369"]

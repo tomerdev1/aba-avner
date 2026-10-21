@@ -12,10 +12,6 @@ export const heMessages = {
     starting: "מתחיל",
     cancelling: "מבטל",
   },
-  locales: {
-    en: "English",
-    he: "עברית",
-  },
   settings: {
     eyebrow: "העדפות",
     title: "הגדרות",

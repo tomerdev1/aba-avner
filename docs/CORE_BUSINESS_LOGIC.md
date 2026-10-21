@@ -20,7 +20,7 @@ The current app exposes these user-facing features that affect behavior:
 - choose whether the output folder should be treated as an already-deduplicated destination
 - choose whether visual duplicate review runs before export
 - choose whether the duplicate-group reference folder is exported
-- switch UI language between English and Hebrew
+- switch UI language between English, Hebrew, Spanish, Chinese, Filipino, Swahili and Tok Pisin
 
 The minimum image size, similarity threshold, "skip images already in output", and visual-review setting change runtime behavior. The similar-group export setting changes output side effects but does not change grouping or representative selection. Language and view settings change the UI only.
 

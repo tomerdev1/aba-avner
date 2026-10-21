@@ -1,0 +1,116 @@
+export const tpiMessages = {
+  app: {
+    title: "Aba Avner",
+    eyebrow: "Rausim ol pikja i gat narapela wankain",
+    subtitle: "Wanpela klik. Wanpela folda i klin.",
+    openSettings: "Opim ol setting",
+    openLanguageMenu: "Opim menu bilong tok ples",
+    startRun: "Makim ol folda na Ran",
+    cancelRun: "Sutim ran",
+    idle: "I wet",
+    working: "I wok",
+    starting: "I stat",
+    cancelling: "I sutim",
+  },
+  settings: {
+    eyebrow: "Ol laik bilong yu",
+    title: "Ol setting",
+    back: "Go bek",
+    reset: "Putim bek olsem bipo",
+    minSizeLabel: "Liklik saiz bilong pikja",
+    minSizeDescription:
+      "Lusim ol liklik pikja pastaim bipo long rausim ol dabol, bai skan i lukluk long ol fail i bikpela samting.",
+    ignoreSmallerThan: "Lusim ol pikja i liklik winim",
+    similarityThresholdLabel: "Namba bilong wankain",
+    similarityThresholdDescription:
+      "Makim olsem wanem strong long makim tupela pikja i luk wankain tasol i no stret wankain.",
+    matchImagesWithin: "Makim ol pikja insait long",
+    similarityThresholdMin: "Strong moa",
+    similarityThresholdMax: "Isi moa",
+    filterExistingOutputLabel: "Lusim ol pikja i stap pinis long aut folda",
+    filterExistingOutputDescription:
+      "Skelim ol nupela pikja wantaim folda we bai yu putim ol, na lusim ol pikja i gat wankain pinis long dispela folda.",
+    visualReviewLabel: "Step bilong lukim ol dabol pikja",
+    visualReviewDescription:
+      "Pas sampela taim bihain long grup, bai yu makim wanpela pikja bilong holim long olgeta grup bipo long salim i go aut.",
+    exportGroupsLabel: 'Salim i go aut folda bilong "ol grup bilong pikja i wankain"',
+    exportGroupsDescription:
+      "Mekim wanpela folda bilong lukim ol grup bilong dabol pikja, i stap wantaim aut folda.",
+    licenseNotice:
+      "Aba Avner em i fri soptwea anda long GNU GPL v3 o nupela moa, nogat gerani. Kod: github.com/tomerdev1/aba-avner",
+  },
+  dialogs: {
+    selectInput: "Makim folda we ol pikja i stap long en",
+    selectOutput: "Makim aut folda",
+  },
+  progress: {
+    label: "Wok bilong rausim dabol",
+    scan: "I skan",
+    hash: "I wokim hash",
+    group: "I mekim grup",
+    review: "I lukluk",
+    copy: "I kopi",
+  },
+  review: {
+    badge: "Lukluk",
+    title: "Lukluk long ol grup bilong dabol",
+    hint: "Makim wanpela pikja bilong holim long olgeta grup bilong dabol bipo long salim i go aut.",
+    empty: "I no gat grup i nidim lukluk. Klikim Mekim na Salim i go aut bilong go het.",
+    groupLabel: "Grup {index}",
+    apply: "Mekim na Salim i go aut",
+    cancel: "Sutim",
+  },
+  summary: {
+    badge: "Sotpela stori bilong ran",
+    hint: "Las ran i pinis",
+    totalLabel: "Ol pikja mipela i skan",
+    uniqueLabel: "Ol narapela narapela pikja i kopi pinis",
+    duplicateLabel: "Ol dabol mipela i rausim",
+    storageSavedLabel: "Ples mipela i seivim",
+    showDetails: "Soim ol tok klia",
+    hideDetails: "Haitim ol tok klia",
+    reportMismatch:
+      "Grup i painim {groupedUniqueImages} pikja bipo long filta long aut folda. {copiedUniqueImages} tasol i kopi.",
+    folderBreakdownTitle: "Ol folda i gat planti dabol moa",
+    folderBreakdownHint: "Planti dabol na ples i lus moa long wanwan folda we ol pikja i stap.",
+    folderBreakdownEmpty: "I no gat folda i bikpela long dispela ran.",
+    folderDuplicates: "{count} dabol",
+    outputDir: "Aut folda: {path}",
+  },
+  issues: {
+    tauriUnavailableTitle: "Tauri i no stap",
+    tauriUnavailableHint: "Yumi nidim ol desktop API bilong mekim dispela wok.",
+    tauriUnavailableItem: "Ol Tauri API i no stap.",
+    runFailedTitle: "Ran i pundaun",
+    runFailedHint: "Wok i stop bipo long em i pinis.",
+    runCancelledTitle: "Ran i stop",
+    runCancelledHint: "Wok i stop bipo long em i pinis.",
+    warningsTitle: "{count} woning",
+    warningsHint: "Lukim ol fail mipela i lusim na ol liklik hevi.",
+    warningItems: {
+      fileIssue: "{path}: {detail}",
+      outputDirScanFailed: "{path}: {detail}",
+      similarImageInOutput:
+        "Mipela i lusim {path} bikos wanpela pikja i wankain i stap pinis long aut folda.",
+    },
+    errors: {
+      invalidInputDir: "Folda yu makim long ol pikja i no inap long yusim.",
+      invalidOutputDir: "Aut folda yu makim i no inap long yusim.",
+      invalidSelection: "Wanpela pikja yu makim long lukluk i no bilong dispela grup.",
+      inputOutputConflict:
+        "Folda bilong ol pikja na aut folda i mas narapela narapela, na i no ken stap insait long narapela.",
+      runInProgress: "Wanpela ran i wok pinis.",
+      cancelled: "Ran i stop.",
+      readDirFailed: "Apps i no inap ridim wanpela long ol folda i gat bikpela wok.",
+      loadImageFailed: "Apps i no inap kisim wanpela long ol pikja bilong dispela ran.",
+      copyImageFailed: "Apps i no inap kopi wanpela long ol pikja yu makim.",
+      unexpected: "Wanpela hevi i no gat tingting long en long backend ({code}). Lukim ol developer log.",
+    },
+  },
+  units: {
+    megabytes: "MB",
+  },
+  updates: {
+    confirmInstall: "Version {version} i stap. Insolim na ristatim nau?",
+  },
+};

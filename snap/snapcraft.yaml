@@ -1,7 +1,7 @@
 name: aba-avner
 title: Aba Avner
 base: core24
-version: "0.1.1"
+version: "0.2.0"
 contact: https://github.com/tomerdev1/aba-avner/issues
 source-code: https://github.com/tomerdev1/aba-avner
 license: GPL-3.0-or-later
@@ -23,7 +23,7 @@ description: |
   - tunes similarity sensitivity and minimum file size to fit your library
   - skips images already present in your output folder, so re-runs are fast
   - your photos never leave your device: no account, no cloud upload, no tracking
-  - available in English and Hebrew
+  - available in English, Hebrew, Spanish, Chinese, Filipino, Swahili and Tok Pisin
   .
   Built with Tauri + Rust: a small, fast, native desktop app.
   .
