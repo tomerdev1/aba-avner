@@ -42,8 +42,8 @@ describe("app bindings", () => {
     elements.backButton.click();
     elements.languageButton.click();
     elements.summaryToggleButton.click();
-    elements.localeEnButton.click();
-    elements.localeHeButton.click();
+    elements.localeButtons[0].click();
+    elements.localeButtons[1].click();
     elements.minSizeSlider.value = "2.5";
     elements.minSizeSlider.dispatchEvent(new Event("input"));
     elements.similarityThresholdInput.value = "6";
@@ -172,13 +172,13 @@ describe("app bindings", () => {
     elements.languageButton.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowDown", bubbles: true }));
 
     expect(app.toggleLanguageMenu).toHaveBeenCalledTimes(1);
-    expect(document.activeElement).toBe(elements.localeEnButton);
+    expect(document.activeElement).toBe(elements.localeButtons[0]);
 
     elements.languageMenu.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowDown", bubbles: true }));
-    expect(document.activeElement).toBe(elements.localeHeButton);
+    expect(document.activeElement).toBe(elements.localeButtons[1]);
 
     elements.languageMenu.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowUp", bubbles: true }));
-    expect(document.activeElement).toBe(elements.localeEnButton);
+    expect(document.activeElement).toBe(elements.localeButtons[0]);
 
     elements.languageMenu.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
     expect(app.closeLanguageMenu).toHaveBeenCalledTimes(1);

@@ -38,8 +38,7 @@ function getLanguageMenuElements() {
   return {
     languageButton: document.getElementById("languageButton"),
     languageMenu: document.getElementById("languageMenu"),
-    localeEnButton: document.getElementById("localeEnButton"),
-    localeHeButton: document.getElementById("localeHeButton"),
+    localeButtons: [...document.querySelectorAll("[data-locale]")],
   };
 }
 

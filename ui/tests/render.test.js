@@ -30,10 +30,10 @@ describe("app render", () => {
     expect(elements.languageButton.getAttribute("aria-expanded")).toBe("true");
     expect(elements.languageMenu.hidden).toBe(false);
     expect(elements.languageMenu.getAttribute("aria-hidden")).toBe("false");
-    expect(elements.localeHeButton.getAttribute("aria-pressed")).toBe("true");
-    expect(elements.localeHeButton.getAttribute("tabindex")).toBe("0");
-    expect(elements.localeEnButton.getAttribute("tabindex")).toBe("0");
-    expect(elements.localeEnButton.textContent).toContain("English");
+    expect(elements.localeButtons[1].getAttribute("aria-pressed")).toBe("true");
+    expect(elements.localeButtons[1].getAttribute("tabindex")).toBe("0");
+    expect(elements.localeButtons[0].getAttribute("tabindex")).toBe("0");
+    expect(elements.localeButtons[0].textContent).toContain("English");
   });
 
   it("renders settings view, running state, and localized progress labels", () => {

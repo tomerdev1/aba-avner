@@ -1,18 +1,36 @@
 import { enMessages } from "./messages/en.js";
 import { heMessages } from "./messages/he.js";
+import { esMessages } from "./messages/es.js";
+import { zhMessages } from "./messages/zh.js";
+import { filMessages } from "./messages/fil.js";
+import { swMessages } from "./messages/sw.js";
+import { tpiMessages } from "./messages/tpi.js";
 
 const DEFAULT_LOCALE = "en";
 const LOCALE_STORAGE_KEY = "aba_avner.locale";
 
+// Menu order; name is the language's own name, flag is the country it is paired with.
+export const LOCALES = [
+  { code: "en", name: "English", flag: "🇺🇸", dir: "ltr" },
+  { code: "he", name: "עברית", flag: "🇮🇱", dir: "rtl" },
+  { code: "es", name: "Español", flag: "🇪🇸", dir: "ltr" },
+  { code: "zh", name: "简体中文", flag: "🇨🇳", dir: "ltr" },
+  { code: "fil", name: "Filipino", flag: "🇵🇭", dir: "ltr" },
+  { code: "sw", name: "Kiswahili", flag: "🇰🇪", dir: "ltr" },
+  { code: "tpi", name: "Tok Pisin", flag: "🇵🇬", dir: "ltr" },
+];
+
 const catalogs = {
   en: enMessages,
   he: heMessages,
+  es: esMessages,
+  zh: zhMessages,
+  fil: filMessages,
+  sw: swMessages,
+  tpi: tpiMessages,
 };
 
-const localeDirections = {
-  en: "ltr",
-  he: "rtl",
-};
+const localeDirections = Object.fromEntries(LOCALES.map(({ code, dir }) => [code, dir]));
 
 export function createLocalizationService(options = {}) {
   const storage = options.storage ?? globalThis.localStorage;

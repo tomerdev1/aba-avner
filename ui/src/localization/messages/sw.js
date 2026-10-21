@@ -1,0 +1,116 @@
+export const swMessages = {
+  app: {
+    title: "Aba Avner",
+    eyebrow: "Kiondoa picha zinazorudiwa",
+    subtitle: "Bofya moja. Folda moja safi.",
+    openSettings: "Fungua mipangilio",
+    openLanguageMenu: "Fungua menyu ya lugha",
+    startRun: "Chagua folda na Endesha",
+    cancelRun: "Ghairi uendeshaji",
+    idle: "Imetulia",
+    working: "Inafanya kazi",
+    starting: "Inaanza",
+    cancelling: "Inaghairi",
+  },
+  settings: {
+    eyebrow: "Mapendeleo",
+    title: "Mipangilio",
+    back: "Rudi",
+    reset: "Rejesha chaguomsingi",
+    minSizeLabel: "Ukubwa wa chini wa picha",
+    minSizeDescription:
+      "Ruka picha ndogo sana kabla ya kuondoa nakala ili uchanganuzi ulenge faili muhimu.",
+    ignoreSmallerThan: "Puuza picha ndogo kuliko",
+    similarityThresholdLabel: "Kiwango cha ulinganifu",
+    similarityThresholdDescription:
+      "Dhibiti jinsi ulinganishaji unavyobana picha mbili zinapofanana lakini hazifanani kabisa.",
+    matchImagesWithin: "Linganisha picha ndani ya",
+    similarityThresholdMin: "Ulinganishaji mkali",
+    similarityThresholdMax: "Ulinganishaji legevu",
+    filterExistingOutputLabel: "Ruka picha zilizopo kwenye folda ya matokeo",
+    filterExistingOutputDescription:
+      "Linganisha picha mpya za kipekee na folda lengwa na ruka zile zenye picha inayofanana huko.",
+    visualReviewLabel: "Hatua ya kukagua nakala kwa kuona",
+    visualReviewDescription:
+      "Simama baada ya kupanga makundi ili uchague picha moja ya kuhifadhi kutoka kila kundi la nakala kabla ya kusafirisha.",
+    exportGroupsLabel: 'Safirisha folda ya "makundi ya picha zinazofanana"',
+    exportGroupsDescription:
+      "Unda folda ya marejeo ya makundi ya nakala kando ya matokeo yaliyosafishwa.",
+    licenseNotice:
+      "Aba Avner ni programu huru chini ya GNU GPL v3 au mpya zaidi, bila dhamana. Msimbo chanzo: github.com/tomerdev1/aba-avner",
+  },
+  dialogs: {
+    selectInput: "Chagua folda chanzo ya picha",
+    selectOutput: "Chagua folda ya matokeo",
+  },
+  progress: {
+    label: "Maendeleo ya kuondoa nakala",
+    scan: "Inachanganua",
+    hash: "Inakokotoa hash",
+    group: "Inapanga makundi",
+    review: "Inakagua",
+    copy: "Inanakili",
+  },
+  review: {
+    badge: "Ukaguzi",
+    title: "Kagua makundi ya nakala",
+    hint: "Chagua picha moja ya kuhifadhi kutoka kila kundi la nakala kabla ya kusafirisha.",
+    empty: "Hakuna kundi la nakala linalohitaji ukaguzi wa mkono. Bofya Tumia na Safirisha ili kuendelea.",
+    groupLabel: "Kundi {index}",
+    apply: "Tumia na Safirisha",
+    cancel: "Ghairi",
+  },
+  summary: {
+    badge: "Muhtasari wa uendeshaji",
+    hint: "Uendeshaji wa mwisho uliokamilika",
+    totalLabel: "Picha zilizochanganuliwa",
+    uniqueLabel: "Za kipekee zilizonakiliwa",
+    duplicateLabel: "Nakala zilizoondolewa",
+    storageSavedLabel: "Nafasi iliyookolewa",
+    showDetails: "Onyesha maelezo",
+    hideDetails: "Ficha maelezo",
+    reportMismatch:
+      "Upangaji ulipata wawakilishi {groupedUniqueImages} kabla ya kuchuja kwa folda ya matokeo. {copiedUniqueImages} ndizo zilizonakiliwa kweli.",
+    folderBreakdownTitle: "Folda zenye upotevu mkubwa zaidi wa nakala",
+    folderBreakdownHint: "Idadi kubwa zaidi ya nakala na nafasi iliyopotea kwa kila folda chanzo.",
+    folderBreakdownEmpty: "Hakuna folda zinazojitokeza katika uendeshaji huu.",
+    folderDuplicates: "Nakala {count}",
+    outputDir: "Folda ya matokeo: {path}",
+  },
+  issues: {
+    tauriUnavailableTitle: "Tauri haipatikani",
+    tauriUnavailableHint: "API za kompyuta zinahitajika ili kuendesha kitendo hiki.",
+    tauriUnavailableItem: "API za Tauri hazipatikani.",
+    runFailedTitle: "Uendeshaji umeshindwa",
+    runFailedHint: "Mchakato ulisimama kabla ya kukamilika.",
+    runCancelledTitle: "Uendeshaji umeghairiwa",
+    runCancelledHint: "Mchakato ulisimamishwa kabla ya kukamilika.",
+    warningsTitle: "Maonyo {count}",
+    warningsHint: "Kagua faili zilizorukwa na matatizo yasiyo makubwa.",
+    warningItems: {
+      fileIssue: "{path}: {detail}",
+      outputDirScanFailed: "{path}: {detail}",
+      similarImageInOutput:
+        "{path} imerukwa kwa sababu picha inayofanana tayari ipo kwenye folda ya matokeo.",
+    },
+    errors: {
+      invalidInputDir: "Folda ya ingizo iliyochaguliwa haiwezi kutumika.",
+      invalidOutputDir: "Folda ya matokeo iliyochaguliwa haiwezi kutumika.",
+      invalidSelection: "Moja ya picha zilizochaguliwa kwenye ukaguzi si halali kwa kundi lake.",
+      inputOutputConflict:
+        "Folda za ingizo na matokeo lazima ziwe tofauti na zisiwe ndani ya nyingine.",
+      runInProgress: "Uendeshaji wa kuondoa nakala tayari unaendelea.",
+      cancelled: "Uendeshaji ulighairiwa.",
+      readDirFailed: "Programu haikuweza kusoma moja ya folda zinazohitajika.",
+      loadImageFailed: "Programu haikuweza kupakia moja ya picha zinazohitajika kwa uendeshaji huu.",
+      copyImageFailed: "Programu haikuweza kunakili moja ya picha zilizochaguliwa.",
+      unexpected: "Hitilafu isiyotarajiwa ya backend ({code}). Angalia kumbukumbu za msanidi.",
+    },
+  },
+  units: {
+    megabytes: "MB",
+  },
+  updates: {
+    confirmInstall: "Toleo {version} linapatikana. Sakinisha na uanze upya sasa?",
+  },
+};

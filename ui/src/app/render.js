@@ -36,8 +36,7 @@ function renderAppShell(state, elements, { isBusy }) {
   for (const control of [
     elements.settingsButton,
     elements.languageButton,
-    elements.localeEnButton,
-    elements.localeHeButton,
+    ...(elements.localeButtons ?? []),
     elements.backButton,
     elements.resetSettingsButton,
     elements.minSizeSlider,
